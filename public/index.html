@@ -1,27 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Web site created using create-snowpack-app" />
-    <link rel="stylesheet" type="text/css" href="/index.css" />
-    <title>Snowpack App</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="dist/index.js" type="module"></script>
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f3f4f6;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        list-style-type: none;
+
+        padding: 0;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        background-color: #f9f9f9;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      input[type="text"] {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+
+      li.completed {
+        background-color: #d3ffd3;
+      }
+
+      button {
+        background-color: #ff6b6b;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #ff4b4b;
+      }
+    </style>
   </head>
   <body>
-    <img id="img" src="/logo.svg" />
-    <canvas id="canvas"></canvas>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script type="module" src="/dist/index.js"></script>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <h1>Task List</h1>
+    <ul id="list"></ul>
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="Enter a task" />
+      <button type="submit">Add</button>
+    </form>
   </body>
 </html>
